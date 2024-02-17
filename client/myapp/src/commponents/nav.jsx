@@ -11,6 +11,7 @@ const Nav = () => {
         dispatch(apiSlice.util.resetApiState())
         navigate("/")
     }
+    const a=5
     return (
         <nav>
             <ul>
