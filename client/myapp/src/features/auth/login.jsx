@@ -8,7 +8,7 @@ const Login = () => {
     
     const [value, setValue] = useState('');
     const [items, setItems] = useState([]);
-    
+    const  a=5;
     const search = (event) => {
         setItems([...Array(10).keys()].map(item => event.query + '-' + item));
     }
