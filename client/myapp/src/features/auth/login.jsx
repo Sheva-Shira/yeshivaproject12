@@ -1,23 +1,27 @@
 
 import { AutoComplete } from 'primereact/autocomplete';
 import React, { useState } from "react";
-
-
+import { InputText } from "primereact/inputtext";
+import "primereact/resources/themes/lara-light-cyan/theme.css"
+import { PrimeReactProvider, PrimeReactContext } from 'primereact/api';
 const Login = () => {
     
     const [value, setValue] = useState('');
     const [items, setItems] = useState([]);
-
+    
     const search = (event) => {
         setItems([...Array(10).keys()].map(item => event.query + '-' + item));
     }
     return (
         <>
         
-        <span className="p-float-label">
-            <AutoComplete inputId="ac" value={value}  suggestions={items} completeMethod={search} onChange={(e) => setValue(e.value)} />
-            <label htmlFor="ac">UserName</label>
-        </span></>
+        <div className="card flex justify-content-center">
+            <span className="p-float-label">
+                <InputText id="username" value={value} onChange={(e) => setValue(e.target.value)} />
+                <label htmlFor="username">Username</label>
+            </span>
+        </div></>
     )
 }
 export default Login
+
